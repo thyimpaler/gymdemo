@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Anton", sans-serif;
+
+  --color-brand-yellow: #EAB308;
+  --color-brand-yellow-hover: #CA8A04;
+  --color-gym-dark: #121214;
+  --color-gym-black: #09090b;
+  --color-gym-grey: #1f1f23;
+}
+
+/* Custom styles and utilities */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-gym-black);
+    color: #FAFAFA;
+    font-family: var(--font-sans);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #09090b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #EAB308;
+  }
+}
+
+/* Keyframe for glowing effect if needed */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(234, 179, 8, 0.35);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
